@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Opiniones de Usuarios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="css/lista_categorias.css">
+            <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+
+    <link rel="stylesheet" href="css/lista_categorias.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/Principal.css">
+    <link rel="stylesheet" href="css/desp.css">
+  <style>
+    tr{
+        font-size: 10px;
+    }
+    h2{
+        text-align: center;
+        font-family: 'si';
+    }
+        @font-face {
+  font-family: 'MiFuente';
+  src: url('/tipografias/berbel-serif.ttf') format('truetype');
+}
+        @font-face {
+  font-family: 'si';
+  src: url('/tipografias/Kiona-Regular.ttf') format('truetype');
+}
+a{
+    font-family: si;
+     }
+
+  </style>
+</head>
+<body>
+  <!-- encabezado-->
+<div class="container-fluid">
+  <div class="contenedor_encabezado"> 
+  
+ <div class="logo"><a href="index.html"><img src="img/siu.png" alt=""></a></div>
+  
+  
+    <div class="titulo">
+      <h1>CTX</h1>
+    </div>
+
+ <div class="sesion" id="estado-sesion">
+  <!-- El contenido se llenará con JS -->
+</div>
+    <div class="carro">
+  
+    
+    </div>
+
+
+
+  </div>
+
+<div class="desplazar">
+  <a class="nav-link active menu-icon" onclick="abrirSidebarJefe()" style="color: white;">
+    <i class="fa-solid fa-bars fa-2x"></i>
+  </a>
+</div>
+
+</div>
+
+<div class="linea"></div>
+
+
+
+<!-- SIDEBAR PARA JEFE -->
+<div id="sidebar-jefe" class="sidebar" >
+  <span class="closebtn" onclick="closeNav()">&times;</span>
+  <a href="index.html">Inicio</a>
+  <a href="#" onclick="toggleSubmenu('submenu-Tipos')">Usuarios <i class="fa-solid fa-caret-down"></i></a>
+  <ul id="submenu-Tipos" style="display: none; padding-left: 20px;">
+    <li><a class="dropdown-item" href="Listado_de_empleados.html">Empleados</a></li>
+    <li><a class="dropdown-item" href="Listado_de_compradores.html">Compradores</a></li>
+  </ul>
+  <a href="tareas.html">Asignaciones</a>
+  <a href="agregar_productos.html">Agregar Producto</a>
+     <a href="Opiniones.html">Opiniones</a>
+</div>
+
+
+
+
+
+
+  <div class="container mt-5">
+    <h2 class="mb-4">Opiniones de los Usuarios</h2>
+    <table class="table table-bordered">
+      <thead class="table-primary">
+        <tr>
+          <th style="background-color:white ;border-color: rgb(65, 105, 225);  text-align: center;">Nombre</th>
+          <th  style="background-color:white ;border-color: rgb(65, 105, 225);  text-align: center;">Correo</th>
+          <th  style="background-color:white ;border-color: rgb(65, 105, 225);  text-align: center;">Mensaje</th>
+          <th style="background-color:white ;border-color: rgb(65, 105, 225);  text-align: center;">Fecha</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-opiniones"></tbody>
+    </table>
+  </div>
+
+  <!-- Firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+    import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyANzU0sPRyGdnHPeZ2Lqr2pio5eSvvDKaw",
+      authDomain: "agencia-ctx.firebaseapp.com",
+      projectId: "agencia-ctx",
+      storageBucket: "agencia-ctx.firebasestorage.app",
+      messagingSenderId: "981141252542",
+      appId: "1:981141252542:web:88330078160793d9f271ef",
+      measurementId: "G-SZQLZXMWP4"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    async function cargarOpiniones() {
+      const opinionesRef = collection(db, "opiniones");
+      const q = query(opinionesRef, orderBy("fecha", "desc"));
+      const snapshot = await getDocs(q);
+
+      const tabla = document.getElementById("tabla-opiniones");
+      snapshot.forEach((doc) => {
+        const datos = doc.data();
+        const fecha = datos.fecha?.toDate().toLocaleString() || "Sin fecha";
+
+        const fila = `
+          <tr>
+            <td>${datos.nombre}</td>
+            <td>${datos.correo}</td>
+            <td>${datos.mensaje}</td>
+            <td>${fecha}</td>
+          </tr>
+        `;
+        tabla.innerHTML += fila;
+      });
+    }
+
+    cargarOpiniones();
+  </script>
+  <script src="/javas/jefe.js"></script>
+  <script src="/javas/cerrar sesion.js"></script>
+</body>
+</html>

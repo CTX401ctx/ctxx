@@ -1,0 +1,33 @@
+<!-- formulario login simple -->
+<form onsubmit="return login()">
+  <input type="text" id="usuario" placeholder="Usuario">
+  <input type="password" id="clave" placeholder="Contraseña">
+  <button type="submit">Iniciar sesión</button>
+  <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+</form>
+
+<script>
+function login() {
+  const usuario = document.getElementById("usuario").value;
+  const clave = document.getElementById("clave").value;
+
+  if (usuario === "admin" && clave === "1234") {
+    localStorage.setItem("tipoCuenta", "jefe");
+  } else if (usuario === "cliente" && clave === "1234") {
+    localStorage.setItem("tipoCuenta", "comprador");
+  } else if (usuario === "empleado" && clave === "1234") {
+    localStorage.setItem("tipoCuenta", "empleado");
+  } else {
+    alert("Credenciales incorrectas");
+    return false;
+  }
+
+
+
+  
+  window.location.href = "index.html"; // Redirigir al menú principal
+  return false;
+}
+
+</script>
+

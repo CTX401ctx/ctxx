@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agregar Producto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/Principal.css">
+    <link rel="stylesheet" href="css/desp.css">
+      <link rel="stylesheet" href="css/index.css">
+</head>
+<style>
+    form h2.mb-4 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+        div.mb-3 {
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+     h3.mt-4 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    button.btn.btn-primary {
+      width: 20%;
+      margin-top: 20px;
+      margin-left: 40%;
+    }
+        @font-face {
+  font-family: 'MiFuente';
+  src: url('/tipografias/berbel-serif.ttf') format('truetype');
+}
+        @font-face {
+  font-family: 'si';
+  src: url('/tipografias/Kiona-Regular.ttf') format('truetype');
+}
+
+a {
+  font-family: si;
+}
+input{
+  font-family: si;
+}
+label{
+  font-family: si;
+}
+div{
+  font-family: si;
+}
+h3{
+  font-family: si;
+}
+h2{
+  font-family: si;
+}
+</style>
+<body>
+   <!-- encabezado-->
+<div class="container-fluid">
+  <div class="contenedor_encabezado"> 
+  
+<div class="logo"><a href="index.html"><img src="img/siu.png" alt=""></a></div>
+  
+    <div class="titulo">
+      <h1>CTX</h1>
+    </div>
+
+ <div class="sesion" id="estado-sesion">
+  <!-- El contenido se llenará con JS -->
+</div>
+
+    <div class="carro">
+  
+
+    </div>
+
+
+
+  </div>
+<div class="desplazar">
+  <a class="nav-link active menu-icon" onclick="abrirSidebarJefe()" style="color: white;">
+    <i class="fa-solid fa-bars fa-2x"></i>
+  </a>
+</div>
+
+</div>
+
+<div class="linea" ></div>
+
+<!-- SIDEBAR PARA EMPLEADO (si tienes uno) -->
+<div id="sidebar-empleado" class="sidebar" style="display: none;">
+  <!-- Contenido para empleado -->  <span class="closebtn" onclick="closeNav()">&times;</span>
+  <a href="index.html">Inicio</a>
+      <a href="tareas empleados.html">Asignaciones</a>
+              <a href="agregar producto emp.html">Agregar Producto</a>
+</div>
+
+
+
+
+
+  <form id="form-registro" class="container mt-5 p-4 border rounded shadow bg-light">
+  <h2 class="mb-4" >Agregar nuevo producto</h2>
+
+  <div class="mb-3">
+    <label class="form-label">Nombre:</label>
+    <input type="text" id="nombre" required class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Modelo:</label>
+    <input type="text" id="modelo" required class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Precio:</label>
+    <input type="number" id="precio" required class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Marca:</label>
+    <select id="marca" class="form-select">
+      <option value="Yamaha">Yamaha</option>
+      <option value="Kawasaki">Kawasaki</option>
+      <option value="Ducati">Ducati</option>
+      <option value="Honda">Honda</option>
+      <option value="MV Agusta">MV Agusta</option>
+      <option value="Harley Davidson">Harley Davidson</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Tipo:</label>
+    <select id="tipo" class="form-select">
+      <option value="Naked">Naked</option>
+      <option value="Cross">Cross</option>
+      <option value="Deportiva">Deportiva</option>
+      <option value="Adventure">Adventure</option>
+      <option value="Scooter">Scooter</option>
+      <option value="Chopper">Chopper</option>
+      <option value="Doble Propósito">Doble Propósito</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Descripción corta:</label>
+    <input type="text" id="descripcionCorta" required class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Descripción larga:</label>
+    <textarea id="descripcionLarga" rows="4" cols="50" class="form-control"></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Imagen de fondo (URL):</label>
+    <input type="text" id="imagenFondo" required class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Imágenes del producto (separadas por coma):</label>
+    <input type="text" id="imagenes" placeholder="URL1, URL2, URL3" class="form-control">
+  </div>
+
+  <h3 class="mt-4">Especificaciones</h3>
+
+  <div class="mb-3">
+    <label class="form-label">Suspensión delantera:</label>
+    <input type="text" id="suspensionDelantera" class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Suspensión trasera:</label>
+    <input type="text" id="suspensionTrasera" class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Freno delantero:</label>
+    <input type="text" id="frenoDelantero" class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Freno trasero:</label>
+    <input type="text" id="frenoTrasero" class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Neumático delantero:</label>
+    <input type="text" id="neumaticoDelantero" class="form-control">
+  </div>
+
+  <div class="mb-4">
+    <label class="form-label">Neumático trasero:</label>
+    <input type="text" id="neumaticoTrasero" class="form-control">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Guardar producto</button>
+</form>
+
+  <script type="module" src="/javas/agregar_moto.js"></script>
+  </script>
+
+ <script src="javas/cerrar sesion.js"></script>
+<script src="javas/empleados.js"></script>
+
+</body>
+</html>

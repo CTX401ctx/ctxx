@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motos Deportivas</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/Principal.css">
+    <link rel="stylesheet" href="css/desp.css">
+      <link rel="stylesheet" href="css/index.css">
+  <style>
+    .card-img-top {
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+    .card-text {
+      margin: 0;
+    }
+            @font-face {
+  font-family: 'MiFuente';
+  src: url('/tipografias/berbel-serif.ttf') format('truetype');
+}
+        @font-face {
+  font-family: 'si';
+  src: url('/tipografias/Kiona-Regular.ttf') format('truetype');
+}
+a{
+  font-family: si;
+}
+  </style>
+</head>
+<body >
+
+
+
+
+     <!-- encabezado-->
+<div class="container-fluid">
+  <div class="contenedor_encabezado"> 
+  
+<div class="logo"><a href="index.html"><img src="img/siu.png" alt=""></a></div>
+  
+    <div class="titulo">
+      <h1>CTX</h1>
+    </div>
+ <div class="sesion" id="estado-sesion">
+  <!-- El contenido se llenará con JS -->
+</div>
+    <div class="carro">
+  
+
+    </div>
+
+
+
+  </div>
+
+<div class="desplazar">
+<a class="nav-link active menu-icon" onclick="abrirSidebarComprador()" style="color: white;">
+    <i class="fa-solid fa-bars fa-2x"></i>
+  </a>
+</div>
+
+
+</div>
+
+<div class="linea"></div>
+
+
+<!-- SIDEBAR PARA COMPRADOR -->
+<div id="sidebar-comprador" class="sidebar" style="display: none;">
+      <span class="closebtn" onclick="closeNav()">&times;</span>
+      <a href="index.html">Inicio</a>
+      <a href="productoss.html">Productos</a>
+      <a href="#" onclick="toggleSubmenu('submenu-motos')">Motos <i class="fa-solid fa-caret-down"></i></a>
+<ul id="submenu-motos" style="display: none; padding-left: 20px;">
+  <li><a class="dropdown-item" href="Cross.html">Croos</a></li>
+  <li><a class="dropdown-item" href="Adveture.html">Adventure  </a></li>
+  <li><a class="dropdown-item" href="Deportivas.html">deportiva  </a></li>
+  <li><a class="dropdown-item" href="Nakes.html">Naked  </a></li>
+  <li><a class="dropdown-item" href="Chopper.html">Choper  </a></li>
+  <li><a class="dropdown-item" href="Scooters.html">Scooters</a></li>
+  <li><a class="dropdown-item" href="Doble Proposito.html">Doble Proposito</a></li>
+
+
+</ul>
+
+<a href="#" onclick="toggleSubmenu('submenu-marcas')">Marcas <i class="fa-solid fa-caret-down"></i></a>
+<ul id="submenu-marcas" style="display: none; padding-left: 20px;">
+  <li><a class="dropdown-item" href="Yamaha.html">Yamaha</a></li>
+  <li><a class="dropdown-item" href="Ducatiiiiii.html">Ducati</a></li>
+  <li><a class="dropdown-item" href="Kawasaki.html">Kawasaki</a></li>
+  <li><a class="dropdown-item" href="MV Agusta.html">MV Agusta</a></li>
+  <li><a class="dropdown-item" href="Harley davison.html">Harley davison</a></li>
+  <li><a class="dropdown-item" href="Honda.html">Honda</a></li>
+</ul>
+
+
+      <a href="#">Contacto</a>
+    
+  <!-- Menú motos, marcas, tipos... -->
+</div>
+
+
+
+
+
+  <div class="container py-5" style="margin-top: -100px;">
+    <h1 class="mb-4 text-center" style="font-family: si; font-size: 50px;" > Cross</h1>
+    <div class="row" id="productos-cross" style="margin-top: 150px;" >
+      <!-- Aquí se insertan las motos deportivas -->
+    </div>
+  </div>
+
+  <script type="module" src="/javas/Cross.js"></script>
+  <script src="/javas/comprador.js"></script>
+  <script src="javas/cerrar sesion.js"></script>
+</body>
+</html>

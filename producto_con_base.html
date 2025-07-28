@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/Principal.css">
+    <link rel="stylesheet" href="css/desp.css">
+    
+
+</head>
+
+
+<style>
+    @font-face {
+  font-family: 'MiFuente';
+  src: url('/tipografias/berbel-serif.ttf') format('truetype');
+}
+
+
+</style>
+<body>
+  <!-- encabezado-->
+<div class="container-fluid">
+  <div class="contenedor_encabezado"> 
+  
+    <div class="logo">
+      <img src="img/siu.png" alt="">
+    </div>
+  
+    <div class="titulo">
+      <h1>CTX</h1>
+    </div>
+
+    <div class="sesion">
+      <a href="#"><i class="fa-solid fa-circle-user"></i> iniciar sesion</a>
+    </div>
+    <div class="carro">
+  
+      <i class="fa-solid fa-bag-shopping"></i>
+    </div>
+
+
+
+  </div>
+<div class="desplazar">
+  <a class="nav-link active menu-icon" onclick="openNav()" style="color: white;">
+    <i class="fa-solid fa-bars fa-2x"></i>
+  </a>
+</div>
+
+</div>
+
+<div class="linea"></div>
+
+
+
+
+
+<!-- SIDEBAR PARA JEFE -->
+<div id="sidebar-jefe" class="sidebar" >
+  <span class="closebtn" onclick="closeNav()">&times;</span>
+  <a href="index.html">Inicio</a>
+  <a href="#" onclick="toggleSubmenu('submenu-Tipos')">Usuarios <i class="fa-solid fa-caret-down"></i></a>
+  <ul id="submenu-Tipos" style="display: none; padding-left: 20px;">
+    <li><a class="dropdown-item" href="Uñas.html">Empleados</a></li>
+    <li><a class="dropdown-item" href="Colorimetria.html">Compradores</a></li>
+  </ul>
+  <a href="#">Asignaciones</a>
+  <a href="#">Agregar Producto</a>
+</div>
+
+<!-- SIDEBAR PARA COMPRADOR -->
+<div id="sidebar-comprador" class="sidebar" style="display: none;">
+      <span class="closebtn" onclick="closeNav()">&times;</span>
+      <a href="index.html">Inicio</a>
+      <a href="#" onclick="toggleSubmenu('submenu-motos')">Motos <i class="fa-solid fa-caret-down"></i></a>
+<ul id="submenu-motos" style="display: none; padding-left: 20px;">
+  <li><a class="dropdown-item" href="barberia.html">Croos  </a></li>
+  <li><a class="dropdown-item" href="barberia.html">Adventure  </a></li>
+  <li><a class="dropdown-item" href="barberia.html">deportiva  </a></li>
+  <li><a class="dropdown-item" href="barberia.html">Naked  </a></li>
+  <li><a class="dropdown-item" href="barberia.html">Choper  </a></li>
+  <li><a class="dropdown-item" href="barberia.html">Scooters</a></li>
+  <li><a class="dropdown-item" href="barberia.html">Doble Proposito</a></li>
+
+
+</ul>
+
+<a href="#" onclick="toggleSubmenu('submenu-marcas')">Marcas <i class="fa-solid fa-caret-down"></i></a>
+<ul id="submenu-marcas" style="display: none; padding-left: 20px;">
+  <li><a class="dropdown-item" href="Uñas.html">Yamaha</a></li>
+  <li><a class="dropdown-item" href="Colorimetria.html">Ducati</a></li>
+  <li><a class="dropdown-item" href="Permacologia.html">Kawasaki</a></li>
+  <li><a class="dropdown-item" href="Peinados.html">MV Agusta</a></li>
+  <li><a class="dropdown-item" href="Pestañas.html">Harley davison</a></li>
+  <li><a class="dropdown-item" href="Maquillajep.html">Honda</a></li>
+</ul>
+
+
+<a href="#" onclick="toggleSubmenu('submenu-Tipos')"> Tipo <i class="fa-solid fa-caret-down"></i></a>
+<ul id="submenu-Tipos" style="display: none; padding-left: 20px;">
+  <li><a class="dropdown-item" href="Uñas.html">Primera mano</a></li>
+  <li><a class="dropdown-item" href="Colorimetria.html">Segunda mano</a></li>
+</ul>
+    
+      <a href="#">Contacto</a>
+    
+  <!-- Menú motos, marcas, tipos... -->
+</div>
+
+<!-- SIDEBAR PARA EMPLEADO (si tienes uno) -->
+<div id="sidebar-empleado" class="sidebar" style="display: none;">
+  <!-- Contenido para empleado -->
+</div>
+
+
+
+<div class="container">
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <a href="MT09-N.html" class="card-link">
+      <div class="card h-100">
+        <img src="img/mt 09 azul.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">nombre de la moto</h5>
+          <p class="card-text"> desctipcion breve de la moto</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Ver mas</small>
+        </div>
+      </div>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+
+<footer class="final">
+
+
+</footer>
+
+
+
+</body>
+</html>

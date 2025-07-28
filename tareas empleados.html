@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Todas las Tareas - CTX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/lista_categorias.css">
+  <link rel="stylesheet" href="css/Principal.css">
+  <link rel="stylesheet" href="css/desp.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @font-face {
+      font-family: 'si';
+      src: url('/tipografias/Kiona-Regular.ttf') format('truetype');
+    }
+    body { font-family: si; }
+    h2 { margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <!-- encabezado-->
+<div class="container-fluid">
+  <div class="contenedor_encabezado"> 
+  
+<div class="logo"><a href="index.html"><img src="img/siu.png" alt=""></a></div>
+  
+    <div class="titulo">
+      <h1>CTX</h1>
+    </div>
+
+ <div class="sesion" id="estado-sesion">
+  <!-- El contenido se llenará con JS -->
+</div>
+
+    <div class="carro">
+  
+
+    </div>
+
+
+
+  </div>
+<div class="desplazar">
+  <a class="nav-link active menu-icon" onclick="abrirSidebarJefe()" style="color: white;">
+    <i class="fa-solid fa-bars fa-2x"></i>
+  </a>
+</div>
+
+</div>
+
+<div class="linea" ></div>
+
+<!-- SIDEBAR PARA EMPLEADO (si tienes uno) -->
+<div id="sidebar-empleado" class="sidebar" style="display: none;">
+  <!-- Contenido para empleado -->  <span class="closebtn" onclick="closeNav()">&times;</span>
+  <a href="index.html">Inicio</a>
+      <a href="tareas empleados.html">Asignaciones</a>
+              <a href="agregar producto emp.html">Agregar Producto</a>
+</div>
+
+
+
+
+
+
+<div class="container mt-5">
+  <h2 style="text-align: center; margin-bottom: 50px;"> Todas las Tareas Asignadas</h2>
+  <table class="table table-bordered mt-3">
+    <thead class="table-light">
+      <tr>
+        <th>Empleado</th>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Prioridad</th>
+        <th>Fecha Límite</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody id="tabla-tareas">
+      <tr><td colspan="6">Cargando tareas...</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+  import { getFirestore, collection, getDocs, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyANzU0sPRyGdnHPeZ2Lqr2pio5eSvvDKaw",
+    authDomain: "agencia-ctx.firebaseapp.com",
+    projectId: "agencia-ctx",
+    storageBucket: "agencia-ctx.appspot.com",
+    messagingSenderId: "981141252542",
+    appId: "1:981141252542:web:88330078160793d9f271ef",
+    measurementId: "G-SZQLZXMWP4"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const tabla = document.getElementById("tabla-tareas");
+
+  async function cargarTareasConEmpleados() {
+    const tareasSnapshot = await getDocs(collection(db, "tareas"));
+    tabla.innerHTML = "";
+
+    if (tareasSnapshot.empty) {
+      tabla.innerHTML = `<tr><td colspan="6">No hay tareas asignadas.</td></tr>`;
+      return;
+    }
+
+    for (const docTarea of tareasSnapshot.docs) {
+      const tarea = docTarea.data();
+      let nombreEmpleado = "Desconocido";
+
+      // Buscar el nombre del empleado desde su UID
+      if (tarea.empleadoId) {
+        const docEmpleado = await getDoc(doc(db, "usuarios", tarea.empleadoId));
+        if (docEmpleado.exists()) {
+          const dataEmpleado = docEmpleado.data();
+          nombreEmpleado = `${dataEmpleado.nombre} ${dataEmpleado.apellido || ""}`.trim();
+        }
+      }
+
+      const fecha = tarea.fechaLimite?.toDate?.() ?? new Date(tarea.fechaLimite);
+      const fechaLimite = fecha.toLocaleDateString();
+
+      tabla.innerHTML += `
+        <tr>
+          <td>${nombreEmpleado}</td>
+          <td>${tarea.titulo}</td>
+          <td>${tarea.descripcion}</td>
+          <td>${tarea.prioridad}</td>
+          <td>${fechaLimite}</td>
+          <td>${tarea.estado}</td>
+        </tr>
+      `;
+    }
+  }
+
+  cargarTareasConEmpleados();
+</script>
+<script src="javas/cerrar sesion.js"></script>
+<script src="javas/empleados.js"></script>
+
+</body>
+</html>
