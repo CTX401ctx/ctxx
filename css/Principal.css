@@ -1,0 +1,143 @@
+
+
+ div.contenedor_encabezado {
+    width: 80%;
+    height: 150px;
+    margin-left: 10%;
+    margin-top: 50px;
+    background-color: rgb(255, 255, 255);
+ }
+
+ div.logo {
+  width: 33%;
+  height: 150px;
+  background-color: rgb(255, 255, 255);
+   margin-left: .3%;
+
+    
+
+ }
+
+ div.logo img {
+    margin-left: 25%;
+    margin-top: 25px;
+    height: 100px;
+    width: 114px;
+    
+ }
+
+ div.titulo {
+    width: 33%;
+    height: 150px;
+    float: left;
+    background-color: rgb(255, 255, 255);
+     margin-left: .3%;
+ }
+    div.titulo h1{
+        font-size: 50px;
+        font-family: MiFuente;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    div.sesion {
+        width: 33%;
+        height: 75px;
+        float: left;
+        background-color: rgb(255, 255, 255);
+        margin-left: .3%;
+    }
+    div.sesion a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        margin-top: 15px;
+        margin-left: 35px;
+        display: block;
+        text-align: left;
+    }
+    div.sesion i {
+    font-size: 25px;
+    margin-right: 8px;
+    }
+
+    div.carro{
+        width: 33%;
+        height: 75px;
+        float: left;
+        background-color: rgb(255, 255, 255);
+        margin-left: .3%;
+    }
+
+    div.carro i{
+    font-size: 45px;
+    color: black;
+    margin-right: 8px;
+    float: right;
+    margin-right: 100px;
+    margin-top: 10px;
+    }
+
+    div.desplazar {
+        float: right;
+        width: 5%;
+        height: 75px;
+        background-color: rgb(255, 255, 255);
+        margin-top: -150px;
+        z-index: 10; 
+        margin-right: 50px;
+
+    }
+
+    div.desplazar i {
+        font-size: 40px;
+        margin-right: 100px;
+        margin-top: 15px;
+        color: black;
+
+    }
+
+
+
+
+
+    div.linea {
+        margin-left: 5%;
+        width: 90%;
+        height: 1px;
+         border: 1px solid black;
+        border-color: #4169e1;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 150px;
+    }
+
+
+
+
+
+
+
+    footer.final{
+        margin-top: 100px;
+        width: 100%;
+        height: 100px;
+        background-color: black;
+    }
+
+
+
+
+
+
+    /* apartado deeeee lista de empleados.
+ */ 
+ div.lista{
+    width: 100%;
+    height: 100px;
+
+ }
+ div.lista h1{
+    text-align: center;
+    
+ }

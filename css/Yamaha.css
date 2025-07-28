@@ -1,0 +1,304 @@
+
+
+
+.bg-body-tertiary {
+  background-color: rgb(101, 157, 166)!important;
+}
+
+
+.card-footer{
+  background-color: transparent; border: 1px solid #00ff22;
+}
+
+
+
+.text-body-secondary{ 
+--bs-text-opacity: 1;
+color: rgb(0, 0, 0) !important;
+}
+
+
+.nake{
+  width: 100px;
+  height: 110px;
+
+  float: left;
+  margin-right: 1%;
+  margin-left: 1%;
+
+img{
+  width: 100%;
+  height: 80px;
+}
+}
+
+
+.nake:hover{
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño al hacer hover */
+
+  .tip{
+  color: rgb(101, 157, 166);
+
+}
+
+}
+
+
+.tip{
+  text-align: center;
+  font-size: 13px;
+}
+
+
+
+
+
+.logo{
+    width: 20%;
+    height: 100px;
+    float: left;
+  
+img{
+        width: 100%;
+        height: 140px;
+    }
+}
+.nom{
+    width: 70%;
+    height: 100px;
+    float:right;
+p{
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 100px;
+    color: gray;
+}
+}
+
+.novedades{
+    margin-top: 2%;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 5%;
+p{
+    text-align: center;
+    font-size: 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: gray;
+}
+}
+h5{
+    color: black;
+}
+p{
+    color: black;
+}
+
+
+
+.card-link {
+    text-decoration: none; /* Quita la subrayado de los links */
+  }
+  
+  .card {
+    transition: transform 0.3s, box-shadow 0.3s; /* Añade una transición suave para el hover */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al hacer hover */
+    box-shadow: 0 4px 8px rgb(43, 211, 82);
+    /* Añade una sombra más marcada */
+  }
+  
+.btnn {
+
+    background-color: #ff0000; /* Color de fondo */
+    border: none; /* Sin borde */
+    color: white; /* Color del texto */
+    padding: 13px 20px; /* Espaciado interno */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Mantener el botón como un elemento en línea */
+    font-size: 16px; /* Tamaño de la fuente (100% -> 16px) */
+    margin: -10px 40%; /* Margen exterior */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Animación al pasar el ratón */
+      
+    } 
+      .btnn:hover {
+        background-color: #920000;
+    
+  }
+  
+
+
+  .pie{
+    width: 100%;
+    height: 100px;
+    background-color: black;}
+
+.dropdown-itemm {
+    display: block;
+    width: 100%;
+    padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+    clear: both;
+    font-weight: 400;
+    color: var(--bs-dropdown-link-color);
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    border-radius: var(--bs-dropdown-item-border-radius, 0);
+  }
+  .dropdown-itemm:hover, .dropdown-item:focus {
+    color: var(--bs-dropdown-link-hover-color);
+    background-color: var(--bs-dropdown-link-hover-bg);
+  }
+
+
+
+
+  
+.nav {
+    --bs-nav-link-padding-x: 1rem;
+    --bs-nav-link-padding-y: 0.5rem;
+    --bs-nav-link-font-weight: ;
+    --bs-nav-link-color: var(--bs-link-color);
+    --bs-nav-link-hover-color: var(--bs-link-hover-color);
+    --bs-nav-link-disabled-color: var(--bs-secondary-color);
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  
+  .nav-link {
+    display: block;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
+    color: var(--bs-nav-link-color);
+    text-decoration: none;
+    background: none;
+    border: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nav-link {
+      transition: none;
+    }
+  }
+  .nav-link:hover, .nav-link:focus {
+    color: var(--bs-nav-link-hover-color);
+  }
+  .nav-link:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  }
+  .nav-link.disabled, .nav-link:disabled {
+    color: var(--bs-nav-link-disabled-color);
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .pagination{
+  --bs-pagination-color: #ffffff;
+  --bs-pagination-bg:  rgb(101, 157, 166);
+  --bs-pagination-disabled-bg: rgb(101, 157, 166);
+  --bs-pagination-hover-bg: #ffffff;
+  --bs-pagination-hover-color:rgb(101, 157, 166);
+}
+
+
+
+--navegacion---
+
+.navbar-brand {
+
+  color: rgb(255 255 255);
+
+}
+
+
+.nav-link {
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  color: rgb(255 255 255 / 72%);
+  text-decoration: none;
+  background: none;
+  border: 0;
+  transition: color 0.15sease-in-out, background-color 0.15sease-in-out, border-color 0.15sease-in-out;
+}
+
+
+
+.navbar-nav {
+  --bs-nav-link-padding-x: 0;
+  --bs-nav-link-padding-y: 0.5rem;
+  --bs-nav-link-font-weight: ;
+  --bs-nav-link-color: rgb(255 255 255);
+  --bs-nav-link-hover-color: rgb(255 255 255);
+  --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+  color: rgb(255 255 255);
+}
+
+
+
+
+
+
+.navbar-brand {
+
+  color: rgb(255 255 255);
+
+}
+
+
+.nav-link {
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  color: rgb(255 255 255 / 72%);
+  text-decoration: none;
+  background: none;
+  border: 0;
+  transition: color 0.15sease-in-out, background-color 0.15sease-in-out, border-color 0.15sease-in-out;
+}
+
+
+
+.footer-container {
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-info, .footer-links, .footer-social {
+  margin: 10px;
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.card-title{
+  text-align: center;
+}
+
